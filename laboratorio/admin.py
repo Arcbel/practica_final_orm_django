@@ -3,15 +3,15 @@ from laboratorio.models import Laboratorio, DirectorGeneral, Producto
 
 class LaboratorioAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre_laboratorio')
-    ordering = ('id',)
+    ordering = ('nombre_laboratorio',)
 
 class DirectorGeneralAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre_director_general', 'laboratorio')
-    ordering = ('id',)
+    ordering = ('nombre_director_general',)
 
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre_producto', 'laboratorio', 'año_fabricacion', 'p_costo', 'p_venta')
-    ordering = ('id',)
+    ordering = ('nombre_producto', 'laboratorio')
 
     def año_fabricacion(self, obj):
         return obj.f_fabricacion.year
