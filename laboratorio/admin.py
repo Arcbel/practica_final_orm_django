@@ -17,6 +17,10 @@ class ProductoAdmin(admin.ModelAdmin):
         return obj.f_fabricacion.year
     año_fabricacion.short_description = 'f fabricacion'
 
+    list_display_links = ('nombre_producto', 'laboratorio')
+
+    list_filter = ('nombre_producto', 'laboratorio')
+
 admin.site.register(Laboratorio, LaboratorioAdmin)
 admin.site.register(DirectorGeneral, DirectorGeneralAdmin)
 admin.site.register(Producto, ProductoAdmin)
