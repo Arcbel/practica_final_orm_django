@@ -2,8 +2,8 @@ from django.db import models
 
 class Laboratorio (models.Model):
     nombre_laboratorio = models.CharField(max_length = 40)
-    ciudad = models.CharField(max_length = 40, default = '')
-    pais = models.CharField(max_length = 40, default = '')
+    ciudad = models.CharField(max_length = 40)
+    pais = models.CharField(max_length = 40)
 
     def __str__(self):
         return self.nombre_laboratorio
@@ -11,7 +11,7 @@ class Laboratorio (models.Model):
 class DirectorGeneral(models.Model):
     nombre_director_general = models.CharField(max_length = 40)
     laboratorio = models.OneToOneField(Laboratorio, on_delete=models.PROTECT)
-    especialidad = models.CharField(max_length=40, default = '')
+    especialidad = models.CharField(max_length=40)
 
     def __str__(self):
         return self.nombre_director_general

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="table-responsive ">
+    <table class="table table-bordered align-middle text-center">
+        <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">País</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for labs in laboratorios%}
+        <tr>
+            <td>{{ labs.nombre_laboratorio }}</td>
+            <td>{{ labs.ciudad }}</td>
+            <td>{{ labs.pais }}</td>
+            <td><a href="">Actualizar</a></td>
+            <td><a href="">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

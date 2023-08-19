@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content%}
+<form method="POST" action="add">
+    {% csrf_token %}
+    <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    {{form.nombre_laboratorio}}
+    </div>
+    <div class="mb-3">
+    <label for="ciudad" class="form-label">Ciudad</label>
+    {{form.ciudad}}
+    </div>
+    <div class="mb-3">
+    <label for="pais" class="form-label">País</label>
+    {{form.pais}}
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-success">Agregar Laboratorio</button>
+</form>
+{% endblock %}
