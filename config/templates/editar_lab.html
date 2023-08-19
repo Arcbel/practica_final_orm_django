@@ -2,11 +2,13 @@
 
 {% block content%}
 <div class="container text-center">
-    <h1>Ingresar los datos del Laboratorio</h1>
+    <h1>Actualizar Laboratorio</h1>
     <br>
-    <form method="POST" action="add">
+    <form method="POST" action="edit">
         {% csrf_token %}
-        {{ formulario.as_p}}
+
+        {{ formedit.as_p}}
+
         <br>
         <button type="submit" class="btn btn-info">Enviar</button>
     </form>

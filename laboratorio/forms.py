@@ -4,4 +4,5 @@ from .models import Laboratorio
 class LaboratorioForm(forms.ModelForm):
     class Meta:
         model = Laboratorio
-        fields = ('nombre_laboratorio', 'ciudad', 'pais')
+        exclude = []
+        #fields = ('nombre', 'pais', 'etc')

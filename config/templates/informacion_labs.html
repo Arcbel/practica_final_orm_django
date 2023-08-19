@@ -1,28 +1,43 @@
 {% extends "base.html" %}
 
 {% block content%}
-<div class="table-responsive ">
-    <table class="table table-bordered align-middle text-center">
-        <thead>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">País</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for labs in laboratorios%}
-        <tr>
-            <td>{{ labs.nombre_laboratorio }}</td>
-            <td>{{ labs.ciudad }}</td>
-            <td>{{ labs.pais }}</td>
-            <td><a href="">Actualizar</a></td>
-            <td><a href="">Eliminar</a></td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="container table-responsive text-center">
+    <div class="row">
+        <div class="col-12">
+            <h1>Información de Laboratorios</h1>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">País</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for labs in laboratorios%}
+                <tr>
+                    <td>{{ labs.nombre_laboratorio }}</td>
+                    <td>{{ labs.ciudad }}</td>
+                    <td>{{ labs.pais }}</td>
+                    <td><a href="/{{labs.id}}/edit">Actualizar</a></td>
+                    <td><a href="/{{labs.id}}/delete">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container-fluid">
+    <h6>¿Información de los Laboratorios?</h6>
+    <a href="/"> <---Ir a página de Inicio </a>
+    <br>
+    <br>
+    <h6>Has visitado esta página {{ numveces }} veces.</h6>
 </div>
 {% endblock %}
